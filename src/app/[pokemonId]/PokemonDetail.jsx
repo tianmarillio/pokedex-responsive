@@ -16,8 +16,8 @@ export default function PokemonDetail({ pokemonDetail = null }) {
   if (!pokemonDetail) return <div>Loading...</div>;
 
   return (
-    <main className="container mx-auto grid h-screen grid-rows-2  bg-emerald-400">
-      <div className="relative row-span-1 grid grid-cols-6 px-6 pt-6">
+    <main className="container mx-auto grid h-screen max-w-lg grid-rows-2 bg-white">
+      <div className="relative row-span-1 grid grid-cols-6 bg-emerald-400 px-6 pt-6">
         <div className="col-span-5">
           <div className="mb-4 text-3xl font-bold capitalize text-white">
             {pokemonDetail.name}

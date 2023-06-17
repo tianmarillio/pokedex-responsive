@@ -2,7 +2,7 @@
 
 export default function Moves({ moves }) {
   return (
-    <div className="mb-4 grid grid-cols-2 gap-2 overflow-scroll">
+    <div className="mb-4 grid h-full grid-cols-2 gap-2 overflow-scroll">
       {moves.map((item, i) => {
         return <MovesItem key={i} moveName={item.move.name}></MovesItem>;
       })}
