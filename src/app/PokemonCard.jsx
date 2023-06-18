@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
+import CardBackground from "@/assets/card-background.svg";
 
 export default function PokemonCard({
   pokemonId,
@@ -15,10 +16,12 @@ export default function PokemonCard({
 
   return (
     <div
-      className="relative col-span-1 h-32 rounded-xl bg-emerald-400 px-3 pt-4"
+      className="relative col-span-1 h-32 rounded-xl bg-cover px-3 pt-4"
+      // className="relative col-span-1 h-32 rounded-xl bg-emerald-400 px-3 pt-4"
+      style={{ backgroundImage: `url(${CardBackground.src})` }}
       onClick={handleClick}>
       <div className="col-span-1 grid auto-rows-auto gap-1">
-        <div className="mb-2 capitalize">{pokemonName}</div>
+        <div className="mb-2 capitalize text-white">{pokemonName}</div>
 
         {types.map((item, i) => {
           return (
@@ -35,7 +38,7 @@ export default function PokemonCard({
         <img
           src={imageUrl}
           alt="pokemon"
-          className="h-full w-16 object-contain"
+          className="h-20 w-full object-contain"
         />
       </div>
     </div>

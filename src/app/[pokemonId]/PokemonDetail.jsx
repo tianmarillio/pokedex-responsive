@@ -4,6 +4,7 @@ import { useState } from "react";
 import About from "./About";
 import BaseStats from "./BaseStats";
 import Moves from "./Moves";
+import DetailBackground from "@/assets/detail-background.svg";
 
 const DETAIL_ABOUT = "About";
 const DETAIL_BASE_STATS = "Base Stats";
@@ -16,8 +17,10 @@ export default function PokemonDetail({ pokemonDetail = null }) {
   if (!pokemonDetail) return <div>Loading...</div>;
 
   return (
-    <main className="container mx-auto grid h-screen max-w-lg grid-rows-2 bg-white">
-      <div className="relative row-span-1 grid grid-cols-6 bg-emerald-400 px-6 pt-6">
+    <main className="container mx-auto grid h-screen max-w-lg grid-rows-2 bg-[#009473]">
+      <div
+        className="relative row-span-1 grid grid-cols-6 bg-emerald-400 bg-cover px-6 pt-6"
+        style={{ backgroundImage: `url(${DetailBackground.src})` }}>
         <div className="col-span-5">
           <div className="mb-4 text-3xl font-bold capitalize text-white">
             {pokemonDetail.name}
@@ -43,7 +46,7 @@ export default function PokemonDetail({ pokemonDetail = null }) {
           <img
             src={pokemonDetail.imageUrl}
             alt="pokemon"
-            className="h-48 w-full object-contain"
+            className="h-64 w-full object-contain"
           />
         </div>
       </div>
