@@ -8,7 +8,7 @@ export default async function Home() {
   if (!pokemonDetails) return <div>Loading...</div>;
 
   return (
-    <main className="container mx-auto h-full max-w-lg bg-white py-4 text-black">
+    <main className="container mx-auto h-full max-w-md bg-white py-4 text-black">
       {/* <div className="flex"> */}
 
       {/* <img src={PokeballIcon.src} className="inline mr-4 h-auto" /> */}
