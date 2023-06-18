@@ -5,6 +5,8 @@ import About from "./About";
 import BaseStats from "./BaseStats";
 import Moves from "./Moves";
 import DetailBackground from "@/assets/detail-background.svg";
+import formatWeight from "@/helpers/formatWeight";
+import formatHeight from "@/helpers/formatHeight";
 
 const DETAIL_ABOUT = "About";
 const DETAIL_BASE_STATS = "Base Stats";
@@ -73,8 +75,8 @@ export default function PokemonDetail({ pokemonDetail = null }) {
           {menu === DETAIL_ABOUT && (
             <About
               species={pokemonDetail.species.name}
-              height={pokemonDetail.height}
-              weight={pokemonDetail.weight}
+              height={formatHeight(pokemonDetail.height)}
+              weight={formatWeight(pokemonDetail.weight)}
               abilities={pokemonDetail.abilities
                 .map((item) => {
                   return item.ability.name;

@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import PokemonDetail from "./PokemonDetail";
 import getPokemonDetail from "@/services/getPokemonDetail";
 
