@@ -4,6 +4,7 @@ import { useState } from "react";
 import About from "./About";
 import BaseStats from "./BaseStats";
 import Moves from "./Moves";
+import Evolution from "./Evolution";
 import DetailBackground from "@/assets/detail-background.svg";
 import formatWeight from "@/helpers/formatWeight";
 import formatHeight from "@/helpers/formatHeight";
@@ -19,7 +20,7 @@ export default function PokemonDetail({ pokemonDetail = null }) {
   if (!pokemonDetail) return <div>Loading...</div>;
 
   return (
-    <main className="container mx-auto grid h-screen max-w-lg grid-rows-2 bg-[#009473]">
+    <main className="container mx-auto grid h-screen max-w-md grid-rows-2 bg-[#009473]">
       <div
         className="relative row-span-1 grid grid-cols-6 bg-emerald-400 bg-cover px-6 pt-6"
         style={{ backgroundImage: `url(${DetailBackground.src})` }}>
@@ -71,6 +72,7 @@ export default function PokemonDetail({ pokemonDetail = null }) {
             setMenu={setMenu}
             selectedMenu={menu}></PokemonDetailNavItem>
         </nav>
+
         <div className="row-span-5 pt-8">
           {menu === DETAIL_ABOUT && (
             <About
@@ -83,6 +85,7 @@ export default function PokemonDetail({ pokemonDetail = null }) {
                 })
                 .join(", ")}></About>
           )}
+
           {menu === DETAIL_BASE_STATS && (
             <BaseStats
               stats={pokemonDetail.stats.map((item) => {
@@ -92,7 +95,12 @@ export default function PokemonDetail({ pokemonDetail = null }) {
                 };
               })}></BaseStats>
           )}
-          {/* {menu === DETAIL_EVOLUTON && <Evolution></Evolution> } */}
+
+          {/* FIXME: fix GET evolution chain */}
+          {/* {menu === DETAIL_EVOLUTON && (
+            <Evolution evolutions={pokemonDetail.evolutions}></Evolution>
+          )} */}
+
           {menu === DETAIL_MOVES && <Moves moves={pokemonDetail.moves}></Moves>}
         </div>
       </div>
